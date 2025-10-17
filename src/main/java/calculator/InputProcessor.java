@@ -11,7 +11,8 @@ public class InputProcessor {
 
     private void processCustomDelimiter(String input) {
         DelimiterParser delimiterParser = new DelimiterParser();
-        delimiterParser.parseDelimiter(input);
+        String customInput = delimiterParser.parseDelimiter(input);
+        processDefaultDelimiter(customInput);
     }
 
     private void processDefaultDelimiter(String input) {
