@@ -8,5 +8,11 @@ public class Application {
 
         InputChecker inputChecker = new InputChecker();
         Boolean isCustom = inputChecker.isCustomDelimiter(input);
+
+        InputProcessor inputProcessor = new InputProcessor();
+        inputProcessor.process(isCustom, input);
+
     }
+
+
 }
