@@ -50,3 +50,13 @@
 - **Java 코드 컨벤션**을 준수하며, 기본적으로 **Java Style Guide**를 따른다.  
 - 입력은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용한다.  
 - 제공된 `camp.nextstep.edu.missionutils` 라이브러리를 사용해야 한다.
+
+---
+
+## ✨ 구현할 기능 목록
+
+1. 문자열을 입력받는 클래스 구현  
+2. 커스텀 구분자를 판단하는 기능 구현  
+3. 구분자를 기준으로 문자열을 분리하는 클래스 구현  
+4. 분리된 숫자들의 합을 계산하는 기능 구현  
+5. 잘못된 값을 판단하는 클래스 구현
