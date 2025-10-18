@@ -16,6 +16,7 @@ public class Application {
 
             InputProcessor inputProcessor = new InputProcessor();
             List<String> splitInput = inputProcessor.process(isCustom, rawInput);
+            inputChecker.validateNumberList(splitInput);
         } else {
             System.out.println(0);
         }
