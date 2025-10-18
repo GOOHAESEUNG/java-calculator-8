@@ -1,21 +1,26 @@
 package calculator;
 
+import java.util.List;
+
 public class InputProcessor {
-    public void process(boolean isCustom, String input) {
+    public List<String> process(boolean isCustom, String input) {
         if (isCustom) {
-            processCustomDelimiter(input);
+            return processCustomDelimiter(input);
         } else {
-            processDefaultDelimiter(input);
+            return processDefaultDelimiter(input);
         }
     }
 
-    private void processCustomDelimiter(String input) {
+    private List<String> processCustomDelimiter(String input) {
         DelimiterParser delimiterParser = new DelimiterParser();
         String customDelimiter = delimiterParser.parseDelimiter(input);
+
+        StringSplitter splitter = new StringSplitter();
+        return splitter.splitByCustomDelimiter(customDelimiter, input);
     }
 
-    private void processDefaultDelimiter(String input) {
+    private List<String> processDefaultDelimiter(String input) {
         StringSplitter splitter = new StringSplitter();
-        splitter.splitByDelimiter(input);
+        return splitter.splitByDelimiter(input);
     }
 }

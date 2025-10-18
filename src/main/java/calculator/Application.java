@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.List;
+
 public class Application {
 
     public static void main(String[] args) {
@@ -7,10 +9,10 @@ public class Application {
         String input = inputView.inputView();
 
         InputChecker inputChecker = new InputChecker();
-        Boolean isCustom = inputChecker.isCustomDelimiter(input);
+        boolean isCustom = inputChecker.isCustomDelimiter(input);
 
         InputProcessor inputProcessor = new InputProcessor();
-        inputProcessor.process(isCustom, input);
+        List<String> splitInput = inputProcessor.process(isCustom, input);
 
     }
 
