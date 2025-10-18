@@ -1,19 +1,14 @@
 package calculator;
 
 public class DelimiterParser {
+    private static final String CUSTOM_DELIMITER_PREFIX = "//";
+    private static final String CUSTOM_DELIMITER_SUFFIX = "\\n";
+
     public String parseDelimiter(String input) {
-        StringBuffer stringBuffer = new StringBuffer();
-        int index = 0;
+        int start = CUSTOM_DELIMITER_PREFIX.length();
+        int end = input.indexOf(CUSTOM_DELIMITER_SUFFIX);
+        String delimiter = input.substring(start, end);
 
-        for (int i = 1; i < input.length(); i++) {
-            if (input.charAt(i) != '\n') {
-                stringBuffer.append(input.charAt(i));
-            } else {
-                index = i;
-                break;
-            }
-        }
-
-        return stringBuffer.toString();
+        return delimiter.trim();
     }
 }

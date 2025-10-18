@@ -10,7 +10,7 @@ public class StringCalculator {
             sum += Integer.parseInt(s);
         }
 
-        System.out.println(sum);
+        System.out.println("결과 : " + sum);
         return sum;
     }
 }
