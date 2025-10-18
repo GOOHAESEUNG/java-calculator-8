@@ -11,11 +11,14 @@ public class Application {
         InputChecker inputChecker = new InputChecker();
         String input = inputChecker.validateRawInput(rawInput);
         //input 이 널일 경우 처리
+        if (input != null) {
+            boolean isCustom = inputChecker.isCustomDelimiter(input);
 
-        boolean isCustom = inputChecker.isCustomDelimiter(input);
-
-        InputProcessor inputProcessor = new InputProcessor();
-        List<String> splitInput = inputProcessor.process(isCustom, rawInput);
+            InputProcessor inputProcessor = new InputProcessor();
+            List<String> splitInput = inputProcessor.process(isCustom, rawInput);
+        } else {
+            System.out.println(0);
+        }
 
     }
 
