@@ -14,7 +14,7 @@ public class InputChecker {
             InputView inputView = new InputView();
             inputView.resultView(0);
         } else {
-            input.trim();
+            input = input.trim();
 
             boolean isCustom = isCustomDelimiter(input);
 
