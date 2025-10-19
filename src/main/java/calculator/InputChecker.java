@@ -3,8 +3,10 @@ package calculator;
 import java.util.List;
 
 public class InputChecker {
+    private static final String CUSTOM_DELIMITER_PREFIX = "//";
+
     public boolean isCustomDelimiter(String input) {
-        return input.startsWith("//");
+        return input.startsWith(CUSTOM_DELIMITER_PREFIX);
     }
 
     public void validateRawInput(String input) {
