@@ -16,18 +16,8 @@ public class InputChecker {
         } else {
             input = input.trim();
 
-            boolean isCustom = isCustomDelimiter(input);
-
             InputProcessor inputProcessor = new InputProcessor();
-            List<String> splitInput = inputProcessor.process(isCustom, input);
-
-            validateNumberList(splitInput);
-
-            StringCalculator calculator = new StringCalculator();
-            Integer result = calculator.calculate(splitInput);
-
-            InputView inputView = new InputView();
-            inputView.resultView(result);
+            inputProcessor.processCalculation(input);
         }
     }
 

@@ -3,7 +3,21 @@ package calculator;
 import java.util.List;
 
 public class InputProcessor {
-    public List<String> process(boolean isCustom, String input) {
+
+    public void processCalculation(String input) {
+        InputChecker checker = new InputChecker();
+        boolean isCustom = checker.isCustomDelimiter(input);
+        List<String> splitInput = process(isCustom, input);
+        checker.validateNumberList(splitInput);
+
+        StringCalculator calculator = new StringCalculator();
+        Integer result = calculator.calculate(splitInput);
+
+        InputView inputView = new InputView();
+        inputView.resultView(result);
+    }
+
+    private List<String> process(boolean isCustom, String input) {
         if (isCustom) {
             return processCustomDelimiter(input);
         } else {
