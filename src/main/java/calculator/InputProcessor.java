@@ -6,6 +6,10 @@ public class InputProcessor {
 
     public void processCalculation(String input) {
         InputChecker checker = new InputChecker();
+        checker.validateRawInput(input);
+
+        input = trimInput(input);
+
         boolean isCustom = checker.isCustomDelimiter(input);
         List<String> splitInput = process(isCustom, input);
         checker.validateNumberList(splitInput);
@@ -15,6 +19,10 @@ public class InputProcessor {
 
         InputView inputView = new InputView();
         inputView.resultView(result);
+    }
+
+    private String trimInput(String input) {
+        return input.trim();
     }
 
     private List<String> process(boolean isCustom, String input) {

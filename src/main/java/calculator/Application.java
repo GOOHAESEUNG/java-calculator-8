@@ -5,7 +5,7 @@ public class Application {
         InputView inputView = new InputView();
         String rawInput = inputView.inputView();
 
-        InputChecker inputChecker = new InputChecker();
-        inputChecker.validateRawInput(rawInput);
+        InputProcessor inputProcessor = new InputProcessor();
+        inputProcessor.processCalculation(rawInput);
     }
 }

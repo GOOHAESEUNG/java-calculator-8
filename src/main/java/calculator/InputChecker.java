@@ -13,11 +13,6 @@ public class InputChecker {
         if (input == null || input.isBlank()) {
             InputView inputView = new InputView();
             inputView.resultView(0);
-        } else {
-            input = input.trim();
-
-            InputProcessor inputProcessor = new InputProcessor();
-            inputProcessor.processCalculation(input);
         }
     }
 
