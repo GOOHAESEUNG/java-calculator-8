@@ -9,4 +9,8 @@ public class InputView {
         System.out.println(input);
         return input;
     }
+
+    public void resultView(Integer result) {
+        System.out.println("결과 : " + result);
+    }
 }

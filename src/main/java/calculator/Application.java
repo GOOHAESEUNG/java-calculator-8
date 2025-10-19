@@ -19,12 +19,12 @@ public class Application {
             inputChecker.validateNumberList(splitInput);
 
             StringCalculator calculator = new StringCalculator();
-            calculator.calculate(splitInput);
+            Integer result = calculator.calculate(splitInput);
+            inputView.resultView(result);
         } else {
-            System.out.println(0);
+            System.out.println("결과 : " + 0);
         }
 
     }
-
 
 }
