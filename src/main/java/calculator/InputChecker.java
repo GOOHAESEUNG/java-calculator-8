@@ -7,11 +7,25 @@ public class InputChecker {
         return input.startsWith("//");
     }
 
-    public String validateRawInput(String input) {
+    public void validateRawInput(String input) {
         if (input == null || input.isBlank()) {
-            return null;
+            InputView inputView = new InputView();
+            inputView.resultView(0);
         } else {
-            return input.trim();
+            input.trim();
+
+            boolean isCustom = isCustomDelimiter(input);
+
+            InputProcessor inputProcessor = new InputProcessor();
+            List<String> splitInput = inputProcessor.process(isCustom, input);
+
+            validateNumberList(splitInput);
+
+            StringCalculator calculator = new StringCalculator();
+            Integer result = calculator.calculate(splitInput);
+
+            InputView inputView = new InputView();
+            inputView.resultView(result);
         }
     }
 
